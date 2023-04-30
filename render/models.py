@@ -7,5 +7,5 @@ class WeatherReport(models.Model):
 
     class Meta:
         managed = False
-        db_table = "Weather_Report"
-        
+        db_table = '"public"."Weather_Report"'
+        #db_table = "Weather_Report"
