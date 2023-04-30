@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version = "2.1">
+<meta name="maintainer" content="your_email_address@wherever.com" />
+
+<!-- Plays welcome message -->
+<form id="frm_welcome">
+  <block>
+   <prompt>
+   This is the Group 4 Service to report weather.<break time="1000ms"/>
+   </prompt>
+   <!-- Move to the main form -->
+   <goto next="#frm_report_weather" />
+  </block>
+</form>
+
+
+
+<form id="frm_report_weather">
+	<field name="weather_type">
+	            <prompt>
+		            You want to report weather. <break time="1000ms"/>
+		          	Please say one of these five weather conditions<break time="500ms"/>
+					Storm<break time="500ms"/>
+					Heavy Rain<break time="500ms"/>
+					Moderate Rain<break time="500ms"/>
+					Drizzle<break time="500ms"/>
+					No Rain<break time="1000ms"/>				
+				</prompt>
+				<grammar xml:lang="en-US" root = "WeatherRULE" mode="voice">
+				      <rule id="WeatherRULE" scope = "public">
+					        <one-of>
+					         <item> Storm </item>
+					         <item> Heavy Rain </item>
+					         <item> Moderate Rain </item>
+					         <item> Drizzle </item>
+					         <item> No Rain</item>
+					        </one-of>
+				      </rule>
+	   			 </grammar>
+			  <noinput>
+			   <prompt>
+			    I did not hear you. Please try again.
+			   </prompt>
+			   <reprompt/>
+			  </noinput>
+			  <nomatch>
+			   <prompt>
+			    This is not a correct Weather Type. Please try again.
+			   </prompt>
+			   <reprompt/>
+			  </nomatch>
+	</field>
+	<filled>     
+	 	You reported <value expr="weather_type" />
+	 	<submit next="http://ict4d-g4.onrender.com/report" namelist="weather_type" method = "get" />
+	</filled>
+</form>
+
+
+</vxml>
