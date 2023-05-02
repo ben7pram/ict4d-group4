@@ -351,7 +351,7 @@
 		  	<assign name="weather_type" expr="'No Rain'"/>
 		  </if>
 
-	 	<submit next="http://ict4d-g4.onrender.com/report" namelist="weather_type" method = "get" />
+	 	<submit next="http://ict4d-g4.onrender.com/report_fr" namelist="weather_type" method = "get" />
 	</filled>
 </form>
 
