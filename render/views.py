@@ -8,13 +8,16 @@ import datetime
 def index(request):
     return render(request, 'render/index.html', {})
 
-def report(request):
-    print("inside report----")
+def save(request):
     wtype= request.GET['weather_type']
-    print("wtype=",wtype)
     now = datetime.datetime.now()
-    print("now=",now)
     w = WeatherReport(Reporting_Time=now, Reported_Weather_Type=wtype)
-    print("w=",w)
     w.save()
-    return render(request,'render/report.html')
+
+def report(request):
+    save(request)
+    return render(request,'render/report-en.html')
+
+def report_fr(request):
+    save(request)
+    return render(request,'render/report-fr.html')
