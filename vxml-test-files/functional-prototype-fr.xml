@@ -3,18 +3,18 @@
 <meta name="maintainer" content="your_email_address@wherever.com" />
 
 <!-- Plays welcome message -->
-<form id="frm_welcome">
+<form id="frm_welcome_FR">
   <block>
    <prompt>
 	<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_28.wav"/>
    	<break time="1000ms"/>
    </prompt>
    <!-- Move to the main form -->
-   <goto next="#frm_report_weather" />
+   <goto next="#frm_mainMenu_FR" />
   </block>
 </form>
 
-<form id="frm_mainMenu">
+<form id="frm_mainMenu_FR">
 
   <field name="choice">
   <prompt>
@@ -51,19 +51,19 @@
   <filled namelist="choice" mode="all">      
      
       <if cond="choice == '1'">
-				<goto next="#frm_report_weather" />
+				<goto next="#frm_report_weather_FR" />
 
        <elseif cond="choice == '2'" />
             <prompt>
 				 <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_9.wav"/>
             </prompt>
        <elseif cond="choice == '3'" />
-				<goto next="#frm_farming" />
+				<goto next="#frm_farming_FR" />
 		<else/>
 			<prompt>
 			<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_10.wav"/>
    			 </prompt>
-   			 <goto next="#frm_mainMenu" />
+   			 <goto next="#frm_mainMenu_FR" />
       </if>
     
       
@@ -74,7 +74,7 @@
   </filled>
 </form>
 
-<form id="frm_report_weather">
+<form id="frm_report_weather_FR">
 	<field name="weather_type">
 	            <prompt>
 		            <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_29.wav"/>
@@ -153,7 +153,7 @@
 	</filled>
 </form>
 
-<form id="frm_farming">
+<form id="frm_farming_FR">
 	<field name="croptype">
 			<prompt>
 				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_21.wav"/>
