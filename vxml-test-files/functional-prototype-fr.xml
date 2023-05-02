@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version = "2.1">
+<meta name="maintainer" content="your_email_address@wherever.com" />
+
+<!-- Plays welcome message -->
+<form id="frm_welcome">
+  <block>
+   <prompt>
+	<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_28.wav"/>
+   	<break time="1000ms"/>
+   </prompt>
+   <!-- Move to the main form -->
+   <goto next="#frm_report_weather" />
+  </block>
+</form>
+
+<form id="frm_mainMenu">
+
+  <field name="choice">
+  <prompt>
+
+   <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_4.wav"/><break time="500ms"/>
+   <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_5.wav"/><break time="500ms"/>
+   <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_6.wav"/><break time="500ms"/>
+  </prompt>
+     <!-- This grammar is specifically for recognizing dtmf. -->
+     <grammar xml:lang="en-US" root = "MENURULE" mode="dtmf">
+      <rule id="MENURULE" scope = "public">
+        <one-of>
+          <item> 1 </item>
+          <item> 2 </item>
+          <item> 3 </item>
+        </one-of>
+       </rule>
+     </grammar>
+  <noinput>
+   <prompt>
+    <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_7.wav"/>
+   </prompt>
+   <reprompt/>
+  </noinput>
+  <nomatch>
+   <prompt>
+	<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_8.wav"/>
+   </prompt>
+   <reprompt/>
+  </nomatch>
+  </field>
+  
+  
+  <filled namelist="choice" mode="all">      
+     
+      <if cond="choice == '1'">
+				<goto next="#frm_report_weather" />
+
+       <elseif cond="choice == '2'" />
+            <prompt>
+				 <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_9.wav"/>
+            </prompt>
+       <elseif cond="choice == '3'" />
+				<goto next="#frm_farming" />
+		<else/>
+			<prompt>
+			<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_10.wav"/>
+   			 </prompt>
+   			 <goto next="#frm_mainMenu" />
+      </if>
+    
+      
+    <prompt>
+			<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_11.wav"/>
+    </prompt>
+        
+  </filled>
+</form>
+
+<form id="frm_report_weather">
+	<field name="weather_type">
+	            <prompt>
+		            <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_29.wav"/>
+					<break time="500ms"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_12.wav"/>
+					<break time="500ms"/>
+					<!-- The five options -->
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_30.wav"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_13.wav"/>
+					<break time="500ms"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_31.wav"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_14.wav"/>
+					<break time="500ms"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_32.wav"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_15.wav"/>
+					<break time="500ms"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_33.wav"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_16.wav"/>
+					<break time="500ms"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_34.wav"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_17.wav"/>
+					<break time="1000ms"/>				
+				</prompt>
+				<grammar xml:lang="en-US" root = "WeatherRULE" mode="dtmf">
+				      <rule id="WeatherRULE" scope = "public">
+					        <one-of>
+					         <item> 1 </item>
+					         <item> 2 </item>
+					         <item> 3 </item>
+					         <item> 4 </item>
+					         <item> 5 </item>
+					        </one-of>
+				      </rule>
+	   			 </grammar>
+			  <noinput>
+			   <prompt>
+				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_7.wav"/>
+			   </prompt>
+			   <reprompt/>
+			  </noinput>
+			  <nomatch>
+			   <prompt>
+				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_18.wav"/>
+			   </prompt>
+			   <reprompt/>
+			  </nomatch>
+	</field>
+	<filled>     
+		  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_19.wav"/>
+
+		  <if cond="weather_type == 1">
+			  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_13.wav"/>
+		  <elseif cond="weather_type == 2"/>
+			  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_14.wav"/>
+		  <elseif cond="weather_type == 3"/>
+			  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_15.wav"/>
+		  <elseif cond="weather_type == 4"/>
+			  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_16.wav"/>
+		  <elseif cond="weather_type == 5"/>
+		  	<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_17.wav"/>
+		  </if>
+
+		  <if cond="weather_type == 1">
+		  	<assign name="weather_type" expr="'Storm'"/>
+		  <elseif cond="weather_type == 2"/>
+		  	<assign name="weather_type" expr="'Heavy Rain'"/>
+		  <elseif cond="weather_type == 3"/>
+		  	<assign name="weather_type" expr="'Moderate Rain'"/>
+		  <elseif cond="weather_type == 4"/>
+		  	<assign name="weather_type" expr="'Drizzle'"/>
+		  <elseif cond="weather_type == 5"/>
+		  	<assign name="weather_type" expr="'No Rain'"/>
+		  </if>
+
+	 	<submit next="http://ict4d-g4.onrender.com/report" namelist="weather_type" method = "get" />
+	</filled>
+</form>
+
+<form id="frm_farming">
+	<field name="croptype">
+			<prompt>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_21.wav"/>
+				<break time="500ms"/>
+	  			<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_22.wav"/>
+				<break time="500ms"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_30.wav"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_23.wav"/>
+				<break time="500ms"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_31.wav"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_24.wav"/>
+				<break time="500ms"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_32.wav"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_25.wav"/>
+				<break time="500ms"/>
+			</prompt>
+				<grammar xml:lang="en-US" root = "cropRULE" mode="dtmf">
+				      <rule id="cropRULE" scope = "public">
+					        <one-of>
+					         <item> 1 </item>
+					         <item> 2 </item>
+					         <item> 3 </item>
+					        </one-of>
+				      </rule>
+	   			 </grammar>
+			  <noinput>
+			   <prompt>
+				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_7.wav"/>
+			   </prompt>
+			   <reprompt/>
+			  </noinput>
+			  <nomatch>
+			   <prompt>
+				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_18.wav"/>
+			   </prompt>
+			   <reprompt/>
+			  </nomatch>
+	</field>
+
+	<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_27.wav"/>
+
+  <if cond="croptype == 1">
+    <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_23.wav"/>
+	<elseif cond="croptype == 2"/>
+    <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_24.wav"/>
+	<elseif cond="croptype == 3"/>
+    <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_25.wav"/>
+	</if>
+
+</form>
+
+</vxml>

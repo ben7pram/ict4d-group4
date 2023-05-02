@@ -23,23 +23,18 @@
 					<break time="500ms"/>
 					<!-- The five options -->
 					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_30.wav"/>
-					<break time="250ms"/>
 					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_13.wav"/>
 					<break time="500ms"/>
 					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_31.wav"/>
-					<break time="250ms"/>
 					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_14.wav"/>
 					<break time="500ms"/>
 					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_32.wav"/>
-					<break time="250ms"/>
-					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_33.wav"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_15.wav"/>
 					<break time="500ms"/>
-					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_34.wav"/>
-					<break time="250ms"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_33.wav"/>
 					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_16.wav"/>
 					<break time="500ms"/>
-					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_35.wav"/>
-					<break time="250ms"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_34.wav"/>
 					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_17.wav"/>
 					<break time="1000ms"/>				
 				</prompt>
