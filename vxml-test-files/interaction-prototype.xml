@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version = "2.1">
+<meta name="maintainer" content="your_email_address@wherever.com" />
+
+<!-- Plays welcome message -->
+<form id="frm_welcome">
+  <block>
+   <prompt>
+      <audio src="wavs/welcome.wav"> <break time="1000"/></audio> 
+   This is the Group 4 Service.<break time="1000ms"/>
+   </prompt>
+   <!-- Move to the main form -->
+   <goto next="#frm_mainMenu" />
+  </block>
+</form>
+
+<form id="frm_mainMenu">
+
+  <field name="choice">
+  <prompt>
+
+   Press 1 to report weather.<break time="500ms"/>
+   Press 2 to check weather.<break time="500ms"/>
+   Press 3 to get farming information.<break time="500ms"/>
+  </prompt>
+     <!-- This grammar is specifically for recognizing dtmf. -->
+     <grammar xml:lang="en-US" root = "MENURULE" mode="dtmf">
+      <rule id="MENURULE" scope = "public">
+        <one-of>
+          <item> 1 </item>
+          <item> 2 </item>
+          <item> 3 </item>
+        </one-of>
+       </rule>
+     </grammar>
+     <!-- This grammar is specifically for recognizing voice on the same input as the dtmf. -->
+     <grammar xml:lang="en-US" root = "MENURULE" mode="voice">
+      <rule id="MENURULE" scope = "public">
+        <one-of>
+         <item> one </item>
+         <item> two </item>
+         <item> three </item>
+        </one-of>
+      </rule>
+    </grammar>
+  <noinput>
+   <prompt>
+    I did not hear you. Please try again.
+   </prompt>
+   <reprompt/>
+  </noinput>
+  <nomatch>
+   <prompt>
+    Is that a number? Please try again.
+   </prompt>
+   <reprompt/>
+  </nomatch>
+  </field>
+  
+  
+  <filled namelist="choice" mode="all">      
+     
+      <if cond="choice == '1'">
+				<goto next="#frm_report_weather" />
+
+       <elseif cond="choice == '2'" />
+            <prompt>
+            	 It rained yesterday and will be cloudy today.
+            </prompt>
+       <elseif cond="choice == '3'" />
+				<goto next="#frm_farming" />
+		<else/>
+			<prompt>
+            Incorrect Option. Please try again.
+   			 </prompt>
+   			 <goto next="#frm_mainMenu" />
+      </if>
+    
+      
+    <prompt>
+            Thank you for using the service. Goodbye!
+    </prompt>
+        
+  </filled>
+</form>
+
+<form id="frm_report_weather">
+	<field name="weather_type">
+	            <prompt>
+		            You want to report weather. <break time="1000ms"/>
+		          	Please say one of these five weather conditions<break time="500ms"/>
+					Storm<break time="500ms"/>
+					Heavy Rain<break time="500ms"/>
+					Moderate Rain<break time="500ms"/>
+					Drizzle<break time="500ms"/>
+					No Rain<break time="1000ms"/>				
+				</prompt>
+				<grammar xml:lang="en-US" root = "WeatherRULE" mode="voice">
+				      <rule id="WeatherRULE" scope = "public">
+					        <one-of>
+					         <item> Storm </item>
+					         <item> Heavy Rain </item>
+					         <item> Moderate Rain </item>
+					         <item> Drizzle </item>
+					         <item> No Rain</item>
+					        </one-of>
+				      </rule>
+	   			 </grammar>
+			  <noinput>
+			   <prompt>
+			    I did not hear you. Please try again.
+			   </prompt>
+			   <reprompt/>
+			  </noinput>
+			  <nomatch>
+			   <prompt>
+			    This is not a correct Weather Type. Please try again.
+			   </prompt>
+			   <reprompt/>
+			  </nomatch>
+	</field>
+	<filled>     
+	 	You reported <value expr="weather_type" />
+	</filled>
+</form>
+
+
+<form id="frm_farming">
+	<field name="croptype">
+			<prompt>
+	            You requested Farming Information.<break time="500ms"/>
+	  			Please say one of these three crops<break time="500ms"/>
+				Maize<break time="500ms"/>
+				Ground Nuts<break time="500ms"/>
+				Soy Beans<break time="500ms"/>
+			</prompt>
+				<grammar xml:lang="en-US" root = "cropRULE" mode="voice">
+				      <rule id="cropRULE" scope = "public">
+					        <one-of>
+					         <item> Maize </item>
+					         <item> Ground Nuts</item>
+					         <item> Moderate Rain </item>
+					         <item> Soy Beans</item>
+					        </one-of>
+				      </rule>
+	   			 </grammar>
+			  <noinput>
+			   <prompt>
+			    I did not hear you. Please try again.
+			   </prompt>
+			   <reprompt/>
+			  </noinput>
+			  <nomatch>
+			   <prompt>
+			    This is not a correct Crop Type. Please try again.
+			   </prompt>
+			   <reprompt/>
+			  </nomatch>
+	</field>
+	<filled>     
+	 	The weather is suitable. You can safely plant <value expr="croptype" /> seeds.
+	</filled>
+</form>
+
+</vxml>
