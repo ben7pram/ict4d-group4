@@ -11,8 +11,8 @@ class WeatherReport(models.Model):
         db_table = '"public"."Weather_Report"'
        
 class WeatherInfo(models.Model):
-    day = models.TextField()
-    weather_type = models.TextField()
+    Day = models.TextField()
+    Weather_Type = models.TextField()
     id = models.AutoField(primary_key=True)
 
     class Meta:
@@ -20,8 +20,8 @@ class WeatherInfo(models.Model):
         db_table = '"public"."Weather_Info"'
 
 class CropSeeding(models.Model):
-    crop_name = models.TextField()
-    seeding_day = models.TextField()
+    Crop_Name = models.TextField()
+    Seeding_Day = models.TextField()
     id = models.AutoField(primary_key=True)
 
     class Meta:
