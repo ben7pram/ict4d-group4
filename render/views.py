@@ -24,8 +24,8 @@ def report_fr(request):
 
 def weather_info(request):
     period= request.GET['weather_period'] 
-    w_info = WeatherInfo.objects.get(day=period)
-    wtype = w_info.weather_type
+    w_info = WeatherInfo.objects.get(Day=period)
+    wtype = w_info.Weather_Type
     args = {}
     args['wtype'] = wtype
     return render(request,'render/weather-info.html',args)

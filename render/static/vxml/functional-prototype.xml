@@ -216,7 +216,6 @@
 					        <one-of>
 					         <item> Maize </item>
 					         <item> Ground Nuts</item>
-					         <item> Moderate Rain </item>
 					         <item> Soy Beans</item>
 					        </one-of>
 				      </rule>
@@ -235,7 +234,8 @@
 			  </nomatch>
 	</field>
 	<filled>     
-	 	The weather is suitable. You can safely plant <value expr="croptype" /> seeds.
+	 	You requested farming information for <value expr="croptype" /> . One moment. We are retrieving the information.
+		<submit next="http://ict4d-g4.onrender.com/crop_info" namelist="croptype" method = "get" />
 	</filled>
 </form>
 
