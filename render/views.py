@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from render.models import WeatherReport
+from render.models import WeatherReport,WeatherInfo,CropSeeding
 import datetime
 
 
@@ -21,3 +21,14 @@ def report(request):
 def report_fr(request):
     save(request)
     return render(request,'render/report-fr.html')
+
+def weather_info(request):
+    period= request.GET['weather_period'] 
+    w_info = WeatherInfo.objects.get(day=period)
+    wtype = w_info.weather_type
+    args = {}
+    args['wtype'] = wtype
+    return render(request,'render/weather-info.html',args)
+
+def crop_info(request):
+    return render(request,'render/crop-info.html')

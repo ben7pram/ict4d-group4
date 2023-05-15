@@ -9,4 +9,19 @@ class WeatherReport(models.Model):
     class Meta:
         managed = False
         db_table = '"public"."Weather_Report"'
-        #db_table = "Weather_Report"
+       
+class WeatherInfo(models.Model):
+    day = models.TextField()
+    weather_type = models.TextField()
+
+    class Meta:
+        managed = False
+        db_table = '"public"."Weather_Info"'
+
+class CropSeeding(models.Model):
+    crop_name = models.TextField()
+    seeding_day = models.TextField()
+
+    class Meta:
+        managed = False
+        db_table = '"public"."Crop_Seeding"'        

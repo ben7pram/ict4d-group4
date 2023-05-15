@@ -104,9 +104,7 @@
 				<goto next="#frm_report_weather" />
 
        <elseif cond="choice == '2'" />
-            <prompt>
-            	 It rained yesterday and will be cloudy today.
-            </prompt>
+			<goto next="#frm_check_weather" />
        <elseif cond="choice == '3'" />
 				<goto next="#frm_farming" />
 		<else/>
@@ -123,6 +121,44 @@
         
   </filled>
 </form>
+
+<form id="frm_check_weather">
+	<field name="weather_period">
+	            <prompt>
+		            You want to check weather. <break time="1000ms"/>
+		          	Please say one of these three periods <break time="500ms"/>
+					Yesterday<break time="500ms"/>
+					Today<break time="500ms"/>
+					Season<break time="500ms"/>			
+				</prompt>
+				<grammar xml:lang="en-US" root = "WeatherRULE" mode="voice">
+				      <rule id="WeatherRULE" scope = "public">
+					        <one-of>
+					         <item> Yesterday </item>
+					         <item> Today </item>
+					         <item> Season</item>
+					        </one-of>
+				      </rule>
+	   			 </grammar>
+			  <noinput>
+			   <prompt>
+			    I did not hear you. Please try again.
+			   </prompt>
+			   <reprompt/>
+			  </noinput>
+			  <nomatch>
+			   <prompt>
+			    This is not a correct Weather Type. Please try again.
+			   </prompt>
+			   <reprompt/>
+			  </nomatch>
+	</field>
+	<filled>     
+	 	You want to know weather for <value expr="weather_period" /> . One moment. We are retrieving the information.
+        <submit next="http://ict4d-g4.onrender.com/weather_info" namelist="weather_period" method = "get" />
+	</filled>
+</form>
+
 
 <form id="frm_report_weather">
 	<field name="weather_type">
