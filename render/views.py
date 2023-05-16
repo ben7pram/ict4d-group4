@@ -38,3 +38,15 @@ def crop_info(request):
     args['crop']=crop
     args['seed_period'] = seed_period
     return render(request,'render/crop-info.html',args)
+
+def admin_weather(request):
+    day_list = WeatherInfo.objects.all()
+    args = {}
+    args['day_list'] = day_list
+    return render(request,'render/admin-weather.html',args)
+
+def admin_crop(request):
+    crop_list = CropSeeding.objects.all()
+    args = {}
+    args['crop_list']=crop_list
+    return render(request,'render/admin-crop.html',args)

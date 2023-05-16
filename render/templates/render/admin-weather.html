@@ -1,0 +1,20 @@
+
+<html>
+
+<body>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>Day</td>
+            <td>Weather Type</td>
+        </tr>
+        {% for w_info in day_list %}
+        <tr>
+            <td>{{ w_info.id }}</td>
+            <td>{{ w_info.Day }}</td>
+            <td>{{ w_info.Weather_Type }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

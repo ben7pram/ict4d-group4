@@ -7,5 +7,7 @@ urlpatterns = [
     path('report/', views.report, name='report'), 
     path('report_fr/', views.report_fr, name='report_fr'),
     path('weather_info/',views.weather_info,name='weather_info'),
-    path('crop_info/',views.crop_info,name='crop_info'), 
+    path('crop_info/',views.crop_info,name='crop_info'),
+    path('admin_weather/',views.weather_info,name='admin_weather'),
+    path('admin_crop/',views.crop_info,name='admin_crop'),
 ]

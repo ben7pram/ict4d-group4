@@ -1,0 +1,19 @@
+<html>
+
+<body>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>Crop Name</td>
+            <td>Seeding Day</td>
+        </tr>
+        {% for c_info in crop_list %}
+        <tr>
+            <td>{{ c_info.id }}</td>
+            <td>{{ c_info.Crop_Name }}</td>
+            <td>{{ c_info.Seeding_Day }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
