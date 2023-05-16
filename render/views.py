@@ -40,10 +40,16 @@ def crop_info(request):
     return render(request,'render/crop-info.html',args)
 
 def admin_weather(request):
-    day_list = WeatherInfo.objects.all()
+    weather_data = WeatherInfo.objects.all()
     args = {}
-    args['day_list'] = day_list
+    args['weather_data'] = weather_data
     return render(request,'render/admin-weather.html',args)
+
+def update_weather_type(request, id):
+    if request.method == 'POST':
+        weather_type = request.POST.get('weather_type')
+        WeatherInfo.objects.filter(id=id).update(Weather_Type=weather_type)
+    return redirect('admin_weather')
 
 def admin_crop(request):
     crop_list = CropSeeding.objects.all()

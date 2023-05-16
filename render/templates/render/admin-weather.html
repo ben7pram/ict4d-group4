@@ -1,25 +1,31 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <title>
-                Weather Information Admin
-        </title>
-    </head>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Information</title>
+</head>
 <body>
+    <h1>Weather Information</h1>
+    
     <table>
         <tr>
-            <td>id</td>
-            <td>Day</td>
-            <td>Weather Type</td>
+            <th>Day</th>
+            <th>Weather Type</th>
+            <th>Update Weather Type</th>
         </tr>
-        {% for w_info in day_list %}
+        {% for weather in weather_data %}
         <tr>
-            <td>{{ w_info.id }}</td>
-            <td>{{ w_info.Day }}</td>
-            <td>{{ w_info.Weather_Type }}</td>
+            <td>{{ weather.Day }}</td>
+            <td>{{ weather.Weather_Type }}</td>
+            <td>
+                <form method="post" action="{% url 'update_weather_type' weather.id %}">
+                    {% csrf_token %}
+                    <input type="text" name="weather_type" value="{{ weather.Weather_Type }}">
+                    <input type="submit" value="Update">
+                </form>
+            </td>
         </tr>
         {% endfor %}
     </table>
 </body>
 </html>
+
