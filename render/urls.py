@@ -9,6 +9,6 @@ urlpatterns = [
     path('weather_info/',views.weather_info,name='weather_info'),
     path('crop_info/',views.crop_info,name='crop_info'),
     path('admin_weather/',views.admin_weather,name='admin_weather'),
-    path('update-weather-type/<int:id>/', views.update_weather_type, name='update_weather_type'),
+    path('update_weather_type/<int:id>/', views.update_weather_type, name='update_weather_type'),
     path('admin_crop/',views.admin_crop,name='admin_crop'),
 ]
