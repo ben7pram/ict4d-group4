@@ -56,4 +56,5 @@ def update_seed_day(request, id):
     if request.method == 'POST':
         seeding_day = request.POST.get('seeding_day')
         CropSeeding.objects.filter(id=id).update(Seeding_Day=seeding_day)
-    return redirect('index')
+    #return redirect('index')
+    return index(request)
