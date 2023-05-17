@@ -62,7 +62,7 @@ A simple backend data-entry for Weather and Crop Information:
 <BR>
 <BR>
 
-<h1>Crop Information: Seeding Day is one of [Yesterday, Today, Text Suggesting a period</h1>
+<h1>Crop Information: Seeding Day is one of [Yesterday, Today, Text suggesting a period</h1>
     
 <table border="1">
     <tr>
@@ -75,7 +75,7 @@ A simple backend data-entry for Weather and Crop Information:
         <td>{{ crop.Crop_Name }}</td>
         <td>{{ crop.Seeding_Day }}</td>
         <td>
-            <form method="post" action="{% url 'update_seeding_day' weather.id %}">
+            <form method="post" action="{% url 'update_seeding_day' crop.id %}">
                 {% csrf_token %}
                 <input type="text" name="seeding_day" value="{{ crop.Seeding_Day }}">
                 <input type="submit" value="Update">
