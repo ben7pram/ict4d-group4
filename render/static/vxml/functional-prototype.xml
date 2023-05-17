@@ -249,8 +249,6 @@
   </filled>
 </form>
 
-</form>
-
 <form id="frm_farming_crop">
 	<field name="croptype">
 			<prompt>
@@ -291,7 +289,6 @@
 <form id="frm_farming_today">
 	 	You requested farming information for today. One moment. We are retrieving the information.
 		<submit next="http://ict4d-g4.onrender.com/crop_info_today" method = "get" />
-	</filled>
 </form>
 
 <!-- FRENCH VERSION -->
