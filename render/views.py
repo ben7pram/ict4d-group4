@@ -44,6 +44,15 @@ def crop_info(request):
     args['seed_period'] = seed_period
     return render(request,'render/crop-info.html',args)
 
+def crop_info_today(request):
+    crop_data= CropSeeding.objects.get(Seeding_Day='Today')
+    crops_today=''
+    for crop in crop_data:
+        crops_today+=crop.Crop_Name
+
+    args['crops_today'] = crops_today
+    return render(request,'render/crop-info-today.html',args)
+
 
 def update_weather_type(request, id):
     if request.method == 'POST':

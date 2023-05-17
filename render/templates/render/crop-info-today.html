@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+
+<form>
+<block>
+
+        {% if  crops_today != '' %}
+        <prompt>
+            You can seed {{ crops_today }} today. Thank you for using the service. Have a nice day.
+       </prompt>
+        {% else %}
+        <prompt>
+             The weather is not suitable for seeding any crops today. Thank you for using the service. Have a nice day.
+       </prompt>
+        {% endif %}
+
+</block>
+</form>
+</vxml>

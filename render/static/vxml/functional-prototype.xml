@@ -203,9 +203,58 @@
 
 
 <form id="frm_farming">
+	<field name="cropinfotype">
+			<prompt>
+   				 Press 1 to get information by a Crop Name<break time="500ms"/>
+  				 Press 2 to know what to seed today <break time="500ms"/>
+
+			</prompt>
+				<grammar xml:lang="en-US" root = "cropinfoRULE" mode="dtmf">
+				      <rule id="cropinfoRULE" scope = "public">
+					        <one-of>
+					         <item>1</item>
+					         <item>2</item>
+					        </one-of>
+				      </rule>
+	   			 </grammar>
+			  <noinput>
+			   <prompt>
+			    I did not hear you. Please try again.
+			   </prompt>
+			   <reprompt/>
+			  </noinput>
+			  <nomatch>
+			   <prompt>
+			    This is not a correct Crop Type. Please try again.
+			   </prompt>
+			   <reprompt/>
+			  </nomatch>
+	</field>
+
+	  <filled namelist="cropinfotype" mode="all">      
+     
+      <if cond="cropinfotype == '1'">
+				<goto next="#frm_farming_crop" />
+
+       <elseif cond="cropinfotype == '2'" />
+			<goto next="#frm_farming_today" />
+		<else/>
+			<prompt>
+            Incorrect Option. Please try again.
+   			 </prompt>
+   			 <goto next="#frm_farming" />
+      </if>
+    
+        
+  </filled>
+</form>
+
+</form>
+
+<form id="frm_farming_crop">
 	<field name="croptype">
 			<prompt>
-	            You requested Farming Information.<break time="500ms"/>
+	            You requested Farming Information by Crop.<break time="500ms"/>
 	  			Please say one of these three crops<break time="500ms"/>
 				Maize<break time="500ms"/>
 				Ground Nuts<break time="500ms"/>
@@ -236,6 +285,12 @@
 	<filled>     
 	 	You requested farming information for <value expr="croptype" /> . One moment. We are retrieving the information.
 		<submit next="http://ict4d-g4.onrender.com/crop_info" namelist="croptype" method = "get" />
+	</filled>
+</form>
+
+<form id="frm_farming_today">
+	 	You requested farming information for today. One moment. We are retrieving the information.
+		<submit next="http://ict4d-g4.onrender.com/crop_info_today" method = "get" />
 	</filled>
 </form>
 
