@@ -45,7 +45,7 @@ def crop_info(request):
     return render(request,'render/crop-info.html',args)
 
 def crop_info_today(request):
-   print("####################crops_info_today") 
+    print("####################crops_info_today") 
     crop_data= CropSeeding.objects.get(Seeding_Day='Today')
     print("####################crops_data",crop_data)
     crops_today=''
