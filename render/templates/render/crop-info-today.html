@@ -5,9 +5,15 @@
 <block>
 
 
-    {% if  crops_today != '' %}
+    {% if  len(crops_today) > 0 %}
     <prompt>
-        You can seed {{ crops_today }} today. Thank you for using the service. Have a nice day.
+        You can seed <break time="200ms"/>
+        {% for crop in crops_today %}
+            {{ crop }} 
+            <break time="500ms"/>
+        {% endfor %}
+
+         Thank you for using the service. Have a nice day.
    </prompt>
     {% else %}
     <prompt>

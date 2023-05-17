@@ -48,9 +48,9 @@ def crop_info_today(request):
     print("####################crops_info_today") 
     crop_data= CropSeeding.objects.get(Seeding_Day='Today')
     print("####################crops_data",crop_data)
-    crops_today=''
+    crops_today=[]
     for crop in crop_data:
-        crops_today+=crop.Crop_Name
+        crops_today.append(crop.Crop_Name)
         print("--------crops_today=",crops_today)
     args = {}
     args['crops_today'] = crops_today
