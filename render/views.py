@@ -45,14 +45,13 @@ def crop_info(request):
     return render(request,'render/crop-info.html',args)
 
 def crop_info_today(request):
-    print("####################crops_info_today") 
     crop_data= CropSeeding.objects.all()
-    print("####################crops_data",crop_data)
     crops_today=[]
     for crop in crop_data:
         if (crop.Seeding_Day == 'Today' ):
             crops_today.append(crop.Crop_Name)
-    print("--------crops_today=",crops_today)
+    if len(crops_today) < 1:
+       return render(request,'render/crop-info-today-no-seed.html') 
     args = {}
     args['crops_today'] = crops_today
     return render(request,'render/crop-info-today.html',args)
