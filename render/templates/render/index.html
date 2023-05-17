@@ -9,32 +9,39 @@
 
     <title>Bo Saha Koli</title>
 
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-          crossorigin="anonymous">
 </head>
 <body>
-    <header class="container mt-4 mb-4">
-            <img src="{% static "render/logo.png" %}" alt="Logo" class="mw-100">
-            <h1 class="display-4"> Bo Saha Koli</h1>
-    </header>
-<main class="container">
-  
-    A  simple database is created and a basic backend data entry screen for Weather and Crop Information is provided.  The database model is shown below for reference.
+    <table border="0">
+        <tr>
+            <td>
+                <img src="{% static "render/logo.png" %}" alt="Logo">             
+            </td>
+            <td>
+                <h1 > Bo Saha Koli</h1> 
+            </td>
+        </tr>
 
-</main>
+        <tr>
+            <td>
+                A  simple database is created and a basic backend data entry screen for Weather and Crop Information is provided.  The database model is shown  for reference.
+            </td>
+            <td>
+                <img src="{% static "render/tables.png" %}" alt="Database Tables" >
+            </td>
+        </tr>
 
-<header class="container mt-4 mb-4">
-    <img src="{% static "render/tables.png" %}" alt="Database Tables" class="mw-100">
-</header>
+    </table>
 
-<h1>Weather Information</h1>
+   
+A simple backend data-entry for Weather and Crop Information:
+
+
+<h1>Weather Information: - Weather Type is one of [Storm, Heavy Rain, Moderate Rain, Drizzle, No Rain]</h1>
     
-<table>
+<table border="1">
     <tr>
         <th>Day</th>
-        <th>Weather Type</th>
+        <th>Weather Type  </th>
         <th>Update Weather Type</th>
     </tr>
     {% for weather in weather_data %}
@@ -55,9 +62,9 @@
 <BR>
 <BR>
 
-<h1>Crop Information</h1>
+<h1>Crop Information: Seeding Day is one of [Yesterday, Today, Text Suggesting a period</h1>
     
-<table>
+<table border="1">
     <tr>
         <th>Crop Type</th>
         <th>Seeding Day</th>

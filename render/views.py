@@ -7,8 +7,10 @@ import datetime
 # Create your views here.
 def index(request):
     weather_data = WeatherInfo.objects.all()
+    crop_data = CropSeeding.objects.all()
     args = {}
     args['weather_data'] = weather_data
+    args['crop_data']=crop_data
     return render(request, 'render/index.html', args)
 
 def save(request):
