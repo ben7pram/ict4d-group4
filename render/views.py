@@ -49,7 +49,8 @@ def update_weather_type(request, id):
     if request.method == 'POST':
         weather_type = request.POST.get('weather_type')
         WeatherInfo.objects.filter(id=id).update(Weather_Type=weather_type)
-    return redirect('index')
+    #return redirect('index')
+    return index(request)
 
 def update_seed_day(request, id):
     if request.method == 'POST':
