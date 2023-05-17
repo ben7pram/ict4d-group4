@@ -5,20 +5,10 @@
 <block>
 
 
-    {% if  len(crops_today) > 0 %}
-    <prompt>
-        You can seed <break time="200ms"/>
 
-        {{ crops_today }}
-
-        <break time="200ms"/>
-         Thank you for using the service. Have a nice day.
-   </prompt>
-    {% else %}
-    <prompt>
-         The weather is not suitable for seeding any crops today. Thank you for using the service. Have a nice day.
-   </prompt>
-    {% endif %}
+        <prompt>
+            You can seed  {{ crops_today }} . Thank you for using the service. Have a nice day.
+        </prompt>
 
 
 </block>
