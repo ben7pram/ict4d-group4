@@ -6,7 +6,10 @@ import datetime
 
 # Create your views here.
 def index(request):
-    return render(request, 'render/index.html', {})
+    weather_data = WeatherInfo.objects.all()
+    args = {}
+    args['weather_data'] = weather_data
+    return render(request, 'render/index.html', args)
 
 def save(request):
     wtype= request.GET['weather_type']
@@ -39,20 +42,15 @@ def crop_info(request):
     args['seed_period'] = seed_period
     return render(request,'render/crop-info.html',args)
 
-def admin_weather(request):
-    weather_data = WeatherInfo.objects.all()
-    args = {}
-    args['weather_data'] = weather_data
-    return render(request,'render/admin-weather.html',args)
 
 def update_weather_type(request, id):
     if request.method == 'POST':
         weather_type = request.POST.get('weather_type')
         WeatherInfo.objects.filter(id=id).update(Weather_Type=weather_type)
-    return redirect('admin_weather')
+    return redirect('index')
 
-def admin_crop(request):
-    crop_list = CropSeeding.objects.all()
-    args = {}
-    args['crop_list']=crop_list
-    return render(request,'render/admin-crop.html',args)
+def update_seed_day(request, id):
+    if request.method == 'POST':
+        seeding_day = request.POST.get('seeding_day')
+        CropSeeding.objects.filter(id=id).update(Seeding_Day=seeding_day)
+    return redirect('index')

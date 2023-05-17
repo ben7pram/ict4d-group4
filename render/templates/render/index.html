@@ -20,19 +20,63 @@
             <h1 class="display-4"> Bo Saha Koli</h1>
     </header>
 <main class="container">
-    In this project, we aim to create a system that will provide farmers of rain-fed agriculture with information on weather and climate – as it relates to the seeding of crops – using automatically generated voice messages in English, Dagbani and French. 
-    For the purpose of this project, the focus is on the three main crops grown in the community: Maize, Ground Nuts, and Soy Beans. Rainfall data will be collected for use in the system in two ways. 
-    Firstly, farmers will be able to use the system to report their assessment of the amount of rainfall on the previous day, using the categories storm, heavy rain, moderate rain, and drizzle. 
-    Second, members of the local community will be reading the measurements on rain collectors placed around the area, with these measurements being collected into a central database.
-    
-    A  simple database is created and a basic backend data entry screen for Weather and Crop Information is provided. 
-    The database model is shown below for reference.
+  
+    A  simple database is created and a basic backend data entry screen for Weather and Crop Information is provided.  The database model is shown below for reference.
 
 </main>
 
 <header class="container mt-4 mb-4">
     <img src="{% static "render/tables.png" %}" alt="Database Tables" class="mw-100">
 </header>
+
+<h1>Weather Information</h1>
+    
+<table>
+    <tr>
+        <th>Day</th>
+        <th>Weather Type</th>
+        <th>Update Weather Type</th>
+    </tr>
+    {% for weather in weather_data %}
+    <tr>
+        <td>{{ weather.Day }}</td>
+        <td>{{ weather.Weather_Type }}</td>
+        <td>
+            <form method="post" action="{% url 'update_weather_type' weather.id %}">
+                {% csrf_token %}
+                <input type="text" name="weather_type" value="{{ weather.Weather_Type }}">
+                <input type="submit" value="Update">
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<BR>
+<BR>
+
+<h1>Crop Information</h1>
+    
+<table>
+    <tr>
+        <th>Crop Type</th>
+        <th>Seeding Day</th>
+        <th>Update Seeding Day</th>
+    </tr>
+    {% for crop in crop_data %}
+    <tr>
+        <td>{{ crop.Crop_Name }}</td>
+        <td>{{ crop.Seeding_Day }}</td>
+        <td>
+            <form method="post" action="{% url 'update_seeding_day' weather.id %}">
+                {% csrf_token %}
+                <input type="text" name="seeding_day" value="{{ crop.Seeding_Day }}">
+                <input type="submit" value="Update">
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
 
 </body>
 </html>
