@@ -49,7 +49,7 @@ def crop_info_today(request):
     crops_today=''
     for crop in crop_data:
         crops_today+=crop.Crop_Name
-
+    args = {}
     args['crops_today'] = crops_today
     return render(request,'render/crop-info-today.html',args)
 
