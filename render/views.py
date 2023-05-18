@@ -35,16 +35,24 @@ def weather_info(request):
     args['wtype'] = wtype
     return render(request,'render/weather-info.html',args)
 
-def crop_info(request):
+def get_crop_info(request):
     crop= request.GET['croptype'] 
     c_info = CropSeeding.objects.get(Crop_Name=crop)
     seed_period = c_info.Seeding_Day
     args = {}
     args['crop']=crop
     args['seed_period'] = seed_period
+    return args
+
+def crop_info(request):
+    args = get_crop_info(request)
     return render(request,'render/crop-info.html',args)
 
-def crop_info_today(request):
+def crop_info_fr(request):
+    args = get_crop_info(request)
+    return render(request,'render/crop-info-fr.html',args)
+
+def get_crop_info_today(request):
     crop_data= CropSeeding.objects.all()
     crops_today=[]
     for crop in crop_data:
@@ -54,8 +62,15 @@ def crop_info_today(request):
        return render(request,'render/crop-info-today-no-seed.html') 
     args = {}
     args['crops_today'] = crops_today
+    return args
+
+def crop_info_today(request):
+    args = get_crop_info_today(request)
     return render(request,'render/crop-info-today.html',args)
 
+def crop_info_today_fr(request):
+    args = get_crop_info_today(request)
+    return render(request,'render/crop-info-today-fr.html',args)
 
 def update_weather_type(request, id):
     if request.method == 'POST':
