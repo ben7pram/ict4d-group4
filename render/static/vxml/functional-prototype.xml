@@ -482,7 +482,7 @@
 		<prompt>
 			<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_40.wav"/>
 		</prompt>
-		<submit next="http://ict4d-g4.onrender.com/crop_info_today" method = "get" />
+		<submit next="http://ict4d-g4.onrender.com/crop_info_today_fr" method = "get" />
 		<else/>
 			<prompt>
 				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_10.wav"/>
@@ -542,7 +542,7 @@
 		<elseif cond="croptype == 3"/>
 			<assign name="weather_type" expr="'Soy Beans'"/>
 	</if>
-		<submit next="http://ict4d-g4.onrender.com/crop_info" namelist="croptype" method = "get" />
+		<submit next="http://ict4d-g4.onrender.com/crop_info_fr" namelist="croptype" method = "get" />
 	</filled>
 </form>
 
