@@ -443,6 +443,58 @@
 </form>
 
 <form id="frm_farming_FR">
+	<field name="cropinfotype">
+			<prompt>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_38.wav"/>
+				<break time="500ms"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_39.wav"/>
+				<break time="500ms"/>
+
+			</prompt>
+				<grammar xml:lang="en-US" root = "cropinfoRULE" mode="dtmf">
+				      <rule id="cropinfoRULE" scope = "public">
+					        <one-of>
+					         <item>1</item>
+					         <item>2</item>
+					        </one-of>
+				      </rule>
+	   			 </grammar>
+			  <noinput>
+			   <prompt>
+				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_7.wav"/>
+			   </prompt>
+			   <reprompt/>
+			  </noinput>
+			  <nomatch>
+			   <prompt>
+				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_7.wav"/>
+			   </prompt>
+			   <reprompt/>
+			  </nomatch>
+	</field>
+
+	  <filled namelist="cropinfotype" mode="all">      
+     
+      <if cond="cropinfotype == '1'">
+				<goto next="#frm_farming_crop_FR" />
+
+       <elseif cond="cropinfotype == '2'" />
+		<prompt>
+			<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_40.wav"/>
+		</prompt>
+		<submit next="http://ict4d-g4.onrender.com/crop_info_today" method = "get" />
+		<else/>
+			<prompt>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_10.wav"/>
+   			 </prompt>
+   			 <goto next="#frm_farming" />
+      </if>
+    
+        
+  </filled>
+</form>
+
+<form id="frm_farming_crop_FR">
 	<field name="croptype">
 			<prompt>
 				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_21.wav"/>
@@ -491,7 +543,7 @@
 	<elseif cond="croptype == 3"/>
     <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_25.wav"/>
 	</if>
-
+	<submit next="http://ict4d-g4.onrender.com/crop_info" namelist="croptype" method = "get" />
 </form>
 
 </vxml>
