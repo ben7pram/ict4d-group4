@@ -6,19 +6,19 @@
 <prompt>
     <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_41.wav"/>
 
-    <if cond="{{ crop }} == Maize">
+    <if cond="{{ crop }} == 'Maize'">
         <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_23.wav"/>
-    <elseif cond="{{ crop }} == Ground Nuts"/>
+    <elseif cond="{{ crop }} == 'Ground Nuts'"/>
         <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_24.wav"/>
-    <elseif cond="{{ crop }} == Soy Beans"/>
+    <elseif cond="{{ crop }} == 'Soy Beans'"/>
         <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_25.wav"/>
     </if>  
     
-    <if cond="{{ seed_period }} == Today">
+    <if cond="{{ seed_period }} == 'Today'">
         <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_42.wav"/>
-    <elseif cond="{{ seed_period }} == Yesterday"/>
+    <elseif cond="{{ seed_period }} == 'Yesterday'"/>
         <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_43.wav"/>
-    <elseif cond="{{ seed_period }} == Season"/>
+    <elseif cond="{{ seed_period }} == 'Season'"/>
         <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_44.wav"/>
     </if>  
 
