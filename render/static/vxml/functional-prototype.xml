@@ -536,11 +536,11 @@
 
 	<filled>      
 		<if cond="croptype == 1">
-			<assign name="weather_type" expr="'Maize'"/>
+			<assign name="croptype" expr="'Maize'"/>
 		<elseif cond="croptype == 2"/>
-			<assign name="weather_type" expr="'Ground Nuts'"/>
+			<assign name="croptype" expr="'Ground Nuts'"/>
 		<elseif cond="croptype == 3"/>
-			<assign name="weather_type" expr="'Soy Beans'"/>
+			<assign name="croptype" expr="'Soy Beans'"/>
 	</if>
 		<submit next="http://ict4d-g4.onrender.com/crop_info_fr" namelist="croptype" method = "get" />
 	</filled>
