@@ -554,10 +554,10 @@
 <!-- AUDIO FILES NOT YET AVAILABLE -->
 
 <form id="frm_welcome_DG">
-	The Dagbani version is still under construction due to translation constraints. This version will now instead be provided in French.
-	<break time="500ms"/>
   <block>
    <prompt>
+    The Dagbani version is still under construction due to translation constraints. This version will now instead be provided in French.
+	<break time="500ms"/>
 	<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_28.wav"/>
    	<break time="1000ms"/>
    </prompt>
