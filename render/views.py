@@ -27,6 +27,10 @@ def report_fr(request):
     save(request)
     return render(request,'render/report-fr.html')
 
+def report_dg(request):
+    save(request)
+    return render(request,'render/report-dg.html')
+
 def weather_info(request):
     period= request.GET['weather_period'] 
     w_info = WeatherInfo.objects.get(Day=period)
@@ -35,43 +39,55 @@ def weather_info(request):
     args['wtype'] = wtype
     return render(request,'render/weather-info.html',args)
 
-def crop_info(request):
+def get_crop_info(request):
     crop= request.GET['croptype'] 
     c_info = CropSeeding.objects.get(Crop_Name=crop)
     seed_period = c_info.Seeding_Day
     args = {}
     args['crop']=crop
     args['seed_period'] = seed_period
+    return args
+
+def crop_info(request):
+    args = get_crop_info(request)
     return render(request,'render/crop-info.html',args)
 
 def crop_info_fr(request):
-    crop= request.GET['croptype'] 
-    c_info = CropSeeding.objects.get(Crop_Name=crop)
-    seed_period = c_info.Seeding_Day
-    args = {}
-    args['crop']=crop
-    args['seed_period'] = seed_period
+    args = get_crop_info(request)
     return render(request,'render/crop-info-fr.html',args)
 
-def get_crop_info_today(request):
+def crop_info_dg(request):
+    args = get_crop_info(request)
+    return render(request,'render/crop-info-dg.html',args)
+
+def get_crop_info_today(request, lang):
     crop_data= CropSeeding.objects.all()
     crops_today=[]
     for crop in crop_data:
         if (crop.Seeding_Day == 'Today' ):
             crops_today.append(crop.Crop_Name)
     if len(crops_today) < 1:
-       return render(request,'render/crop-info-today-no-seed.html') 
+        if (lang == 'en'):
+            return render(request,'render/crop-info-today-no-seed.html') 
+        elif (lang == 'fr'):
+            return render(request,'render/crop-info-today-no-seed-fr.html') 
+        elif (lang == 'dg'):
+            return render(request,'render/crop-info-today-no-seed-dg.html') 
     args = {}
     args['crops_today'] = crops_today
     return args
 
 def crop_info_today(request):
-    args = get_crop_info_today(request)
+    args = get_crop_info_today(request, 'en')
     return render(request,'render/crop-info-today.html',args)
 
 def crop_info_today_fr(request):
-    args = get_crop_info_today(request)
+    args = get_crop_info_today(request, 'fr')
     return render(request,'render/crop-info-today-fr.html',args)
+
+def crop_info_today_dg(request):
+    args = get_crop_info_today(request, 'dg')
+    return render(request,'render/crop-info-today-dg.html',args)
 
 def update_weather_type(request, id):
     if request.method == 'POST':
