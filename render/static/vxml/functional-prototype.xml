@@ -7,7 +7,7 @@
   <field name="choice">
     To select English, press 1<break time="500ms"/>
     <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_36.wav"/><break time="500ms"/>
-	To select Dagbani, press 3<break time="500ms">
+	To select Dagbani, press 3<break time="500ms"/>
     <grammar xml:lang="en-US" root = "MENURULE" mode="dtmf">
       <rule id="MENURULE" scope = "public">
         <one-of>
