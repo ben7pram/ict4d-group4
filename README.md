@@ -12,6 +12,7 @@ to report their assessment of the amount of rainfall on the previous day, using 
 rain, moderate rain, and drizzle. Second, members of the local community will be reading the measurements
 on rain collectors placed around the area, with these measurements being collected into a central database.
 
-Voice Application : Hosted on Voxeo
-Web Service : Implemented in Python, Django and hosted on Render
-Database : PostgreSQL hosted on Render
+<br /><b>Technical Details</b>
+<br />Voice Application :  Main VXML file hosted on Voxeo ( https://evolution.voxeo.com )
+<br />Web Service : Implemented in Python, Django and hosted on Render ( https://render.com )
+<br />Database : PostgreSQL hosted on Render (https://render.com)
