@@ -8,14 +8,6 @@
 
         <prompt>
             <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_41.wav"/>
-        
-            <if cond="{{ seed_period }} == 'Today'">
-                <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_42.wav"/>
-            <elseif cond="{{ seed_period }} == 'Yesterday'"/>
-                <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_43.wav"/>
-            <elseif cond="{{ seed_period }} == 'Season'"/>
-                <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_44.wav"/>
-            </if>  
 
             <foreach item="crop" array="{{ crops_today }}">
                 <if cond="crop == 'Maize'">
