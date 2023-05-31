@@ -558,7 +558,7 @@
    <prompt>
     The Dagbani version is still under construction due to translation constraints. This version will now instead be provided in French.
 	<break time="500ms"/>
-	<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_28.wav"/>
+	<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_28.m4a"/>
    	<break time="1000ms"/>
    </prompt>
    <!-- Move to the main form -->
@@ -571,9 +571,9 @@
   <field name="choice">
   <prompt>
 
-   <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_4.wav"/><break time="500ms"/>
-   <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_5.wav"/><break time="500ms"/>
-   <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_6.wav"/><break time="500ms"/>
+   <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_4.m4a"/><break time="500ms"/>
+   <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_5.m4a"/><break time="500ms"/>
+   <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_6.m4a"/><break time="500ms"/>
   </prompt>
      <!-- This grammar is specifically for recognizing dtmf. -->
      <grammar xml:lang="en-US" root = "MENURULE" mode="dtmf">
@@ -587,13 +587,13 @@
      </grammar>
   <noinput>
    <prompt>
-    <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_7.wav"/>
+    <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_7.m4a"/>
    </prompt>
    <reprompt/>
   </noinput>
   <nomatch>
    <prompt>
-	<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_8.wav"/>
+	<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_8.m4a"/>
    </prompt>
    <reprompt/>
   </nomatch>
@@ -607,20 +607,20 @@
 
        <elseif cond="choice == '2'" />
             <prompt>
-				 <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_9.wav"/>
+				 <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_9.m4a"/>
             </prompt>
        <elseif cond="choice == '3'" />
 				<goto next="#frm_farming_DG" />
 		<else/>
 			<prompt>
-			<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_10.wav"/>
+			<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_10.m4a"/>
    			 </prompt>
    			 <goto next="#frm_mainMenu_DG" />
       </if>
     
       
     <prompt>
-			<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_11.wav"/>
+			<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_11.m4a"/>
     </prompt>
         
   </filled>
@@ -629,25 +629,25 @@
 <form id="frm_report_weather_DG">
 	<field name="weather_type">
 	            <prompt>
-		            <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_29.wav"/>
+		            <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_29.m4a"/>
 					<break time="500ms"/>
-					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_12.wav"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_12.m4a"/>
 					<break time="500ms"/>
 					<!-- The five options -->
-					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_30.wav"/>
-					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_13.wav"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_30.m4a"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_13.m4a"/>
 					<break time="500ms"/>
-					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_31.wav"/>
-					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_14.wav"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_31.m4a"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_14.m4a"/>
 					<break time="500ms"/>
-					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_32.wav"/>
-					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_15.wav"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_32.m4a"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_15.m4a"/>
 					<break time="500ms"/>
-					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_33.wav"/>
-					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_16.wav"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_33.m4a"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_16.m4a"/>
 					<break time="500ms"/>
-					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_34.wav"/>
-					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_17.wav"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_34.m4a"/>
+					<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_17.m4a"/>
 					<break time="1000ms"/>				
 				</prompt>
 				<grammar xml:lang="en-US" root = "WeatherRULE" mode="dtmf">
@@ -663,30 +663,30 @@
 	   			 </grammar>
 			  <noinput>
 			   <prompt>
-				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_7.wav"/>
+				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_7.m4a"/>
 			   </prompt>
 			   <reprompt/>
 			  </noinput>
 			  <nomatch>
 			   <prompt>
-				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_18.wav"/>
+				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_18.m4a"/>
 			   </prompt>
 			   <reprompt/>
 			  </nomatch>
 	</field>
 	<filled>     
-		  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_19.wav"/>
+		  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_19.m4a"/>
 
 		  <if cond="weather_type == 1">
-			  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_13.wav"/>
+			  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_13.m4a"/>
 		  <elseif cond="weather_type == 2"/>
-			  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_14.wav"/>
+			  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_14.m4a"/>
 		  <elseif cond="weather_type == 3"/>
-			  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_15.wav"/>
+			  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_15.m4a"/>
 		  <elseif cond="weather_type == 4"/>
-			  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_16.wav"/>
+			  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_16.m4a"/>
 		  <elseif cond="weather_type == 5"/>
-		  	<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_17.wav"/>
+		  	<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_17.m4a"/>
 		  </if>
 
 		  <if cond="weather_type == 1">
@@ -708,9 +708,9 @@
 <form id="frm_farming_DG">
 	<field name="cropinfotype">
 			<prompt>
-				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_38.wav"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_38.m4a"/>
 				<break time="500ms"/>
-				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_39.wav"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_39.m4a"/>
 				<break time="500ms"/>
 
 			</prompt>
@@ -724,13 +724,13 @@
 	   			 </grammar>
 			  <noinput>
 			   <prompt>
-				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_7.wav"/>
+				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_7.m4a"/>
 			   </prompt>
 			   <reprompt/>
 			  </noinput>
 			  <nomatch>
 			   <prompt>
-				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_7.wav"/>
+				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_7.m4a"/>
 			   </prompt>
 			   <reprompt/>
 			  </nomatch>
@@ -743,12 +743,12 @@
 
        <elseif cond="cropinfotype == '2'" />
 		<prompt>
-			<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_40.wav"/>
+			<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_40.m4a"/>
 		</prompt>
 		<submit next="http://ict4d-g4.onrender.com/crop_info_today_dg" method = "get" />
 		<else/>
 			<prompt>
-				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_10.wav"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_10.m4a"/>
    			 </prompt>
    			 <goto next="#frm_farming" />
       </if>
@@ -760,18 +760,18 @@
 <form id="frm_farming_crop_DG">
 	<field name="croptype">
 			<prompt>
-				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_21.wav"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_21.m4a"/>
 				<break time="500ms"/>
-	  			<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_22.wav"/>
+	  			<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_22.m4a"/>
 				<break time="500ms"/>
-				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_30.wav"/>
-				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_23.wav"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_30.m4a"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_23.m4a"/>
 				<break time="500ms"/>
-				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_31.wav"/>
-				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_24.wav"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_31.m4a"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_24.m4a"/>
 				<break time="500ms"/>
-				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_32.wav"/>
-				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_25.wav"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_32.m4a"/>
+				<audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_25.m4a"/>
 				<break time="500ms"/>
 			</prompt>
 				<grammar xml:lang="en-US" root = "cropRULE" mode="dtmf">
@@ -785,13 +785,13 @@
 	   			 </grammar>
 			  <noinput>
 			   <prompt>
-				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_7.wav"/>
+				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_7.m4a"/>
 			   </prompt>
 			   <reprompt/>
 			  </noinput>
 			  <nomatch>
 			   <prompt>
-				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/fr/fr_18.wav"/>
+				  <audio src="https://ict4d-g4.onrender.com/static/render/wavs/dg/dg_18.m4a"/>
 			   </prompt>
 			   <reprompt/>
 			  </nomatch>
